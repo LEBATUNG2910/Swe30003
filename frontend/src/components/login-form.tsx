@@ -11,7 +11,8 @@ import { motion } from "framer-motion"
 export function LoginForm({
   className,
   ...props
-}: React.ComponentProps<"form">) {
+}: React.ComponentProps<"form">) 
+{
   return (
     <motion.div
       initial={{ opacity: 0, x: -100 }}
@@ -31,6 +32,7 @@ export function LoginForm({
           </a>
         </div>
         <div className="flex flex-1 items-center justify-center">
+          <div className="border border-black p-18 rounded-2xl bg-white shadow-md">
           <form className={cn("flex flex-col gap-6 w-full max-w-xs", className)} {...props}>
             <div className="flex flex-col items-center gap-2 text-center">
               <h1 className="text-2xl font-bold">Sign in to your account</h1>
@@ -56,7 +58,9 @@ export function LoginForm({
                 <Input id="password" type="password" />
               </div>
               <Button type="submit" className="w-full">
+                <Link to="/home">
                 Sign in
+                </Link>
               </Button>
               <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
                 <span className="bg-background text-muted-foreground relative z-10 px-2">
@@ -76,13 +80,14 @@ export function LoginForm({
             </div>
           </form>
         </div>
+        </div>
       </div>
 
       {/* Right side: Image */}
       <div className="bg-muted relative hidden lg:block">
         <img
           src={pic1}
-          alt="Image"
+          alt="pic1"
           className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
         />
       </div>

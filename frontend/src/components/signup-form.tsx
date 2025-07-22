@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import logo from "@/assets/logo.jpg"
 import google from "@/assets/google.png"
-import pic1 from "@/assets/pic1.jpg"
+import pic2 from "@/assets/pic2.jpg"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 
@@ -21,19 +21,20 @@ export function SignUpForm({
     >
     <div className="grid min-h-svh lg:grid-cols-2">
       {/* Left side: Form */}
-      <div className="flex flex-col gap-4 p-6 md:p-10">
+      <div className="flex flex-col gap-4 overflow-y-hidden overflow-x-hidden md:p-10">
         <div className="flex justify-center gap-2 md:justify-start">
-          <a href="#" className="flex items-center gap-2 font-medium">
-            <div className=" flex size-6 items-center justify-center">
-              <img src={logo} alt="Logo" className="size-6" />
+          <a href="#" className="flex items-center gap-2 font-medium text-xl">
+            <div className=" flex items-center justify-center">
+              <img src={logo} alt="Logo" className="size-8"/>
             </div>
             Long Chau
           </a>
-        </div>
-        <div className="flex flex-1 items-center justify-center">
+        </div> 
+            <div className="flex flex-1 items-center justify-center">
+          <div className="border border-black p-9 rounded-2xl bg-white shadow-md">
           <form className={cn("flex flex-col gap-6 w-full max-w-xs", className)} {...props}>
             <div className="flex flex-col items-center gap-2 text-center">
-              <h1 className="text-2xl font-bold">Create a new account</h1>
+              <h1 className="text-2xl font-bold">Create your new account</h1>
               <p className="text-muted-foreground text-sm text-balance">
                 Enter your details below to sign up
               </p>
@@ -65,21 +66,22 @@ export function SignUpForm({
               </Button>
             </div>
             <div className="text-center text-sm">
-  Already have an account?{" "}
-  <Link to="/" className="underline underline-offset-4">
-    Sign in
-  </Link>
-</div>
+              Don&apos;t have an account?{" "}
+          <Link to="/" className="underline underline-offset-4">
+                  Sign in
+            </Link>
+            </div>
           </form>
+        </div>
         </div>
       </div>
 
       {/* Right side: Image */}
       <div className="bg-muted relative hidden lg:block">
         <img
-          src={pic1}
-          alt="Image"
-          className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+          src={pic2}
+          alt="pic2"
+          className=" h-full w-full object-cover"
         />
       </div>
     </div>
