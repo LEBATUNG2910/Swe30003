@@ -36,51 +36,69 @@ import {
 
 export function Home() {
   return (
-    <div className="max-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       {/* Header with Navigation merged */}
-      <header className="sticky top-0 z-50 w-full p-2  border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
+      <header className="sticky top-0 z-50 w-full px-4 py-2 border-b bg-background/95 backdrop-blur shadow-sm">
+        <div className="container mx-auto flex h-16 items-center justify-between">
           {/* Left: Logo */}
-          <div className="flex items-center space-x-4">
-            <Link to="/" className="flex items-center space-x-2 ml-8">
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center space-x-3">
               <img
                 src={logo}
                 alt="Logo"
-                className="h-8 w-8 bg-blue-600 rounded-lg flex items-center justify-center"
+                className="h-8 w-8 rounded-lg"
               />
-              <span className="font-bold text-xl text-blue-600">Long Chau</span>
+              <span className="font-semibold  text-xl text-black font-inter">Long Châu Pharmacy</span>
             </Link>
           </div>
 
-          {/* Center: Navigation (NEW position) */}
-          <nav className="flex space-x-6">
+          {/* Center: Navigation */}
+          <nav className="hidden md:flex items-center space-x-4">
             <Link
               to="/products"
-              className="text-sm font-medium hover:text-blue-600 transition-colors"
+              className="font-poppins text-xs font-bold hover:text-blue-600 transition-colors"
             >
               Products
             </Link>
             <Link
               to="/prescription"
-              className="text-sm font-medium hover:text-blue-600 transition-colors"
+              className="font-poppins text-xs font-bold hover:text-blue-600 transition-colors"
             >
               Prescription
             </Link>
             <Link
               to="/branches"
-              className="text-sm font-medium hover:text-blue-600 transition-colors"
+              className="font-poppins text-xs font-bold hover:text-blue-600 transition-colors"
             >
               Stores
+            </Link>
+            <Link
+              to="/home"
+              className="font-poppins text-xs font-bold hover:text-blue-600 transition-colors"
+            >
+              Loyalty Points
+            </Link>
+            <Link
+              to="/home"
+              className="font-poppins text-xs font-bold hover:text-blue-600 transition-colors"
+            >
+              Staff
+            </Link>
+            <Link
+              to="/home"
+              className="font-poppins text-xs font-bold hover:text-blue-600 transition-colors"
+            >
+              Admin
             </Link>
           </nav>
 
           {/* Right: Search and Icons */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
             {/* Search */}
-            <div className="relative w-100 mr-26">
+            <div className="relative w-64">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
               <Input
-                placeholder="Search medicines, supplements..."
+                placeholder="Search medicines..."
                 className="pl-10 pr-4 border border-gray-300 hover:border-black focus:border-black focus:ring-0"
               />
             </div>
@@ -114,16 +132,16 @@ export function Home() {
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-50 to-indigo-50 py-16">
-        <div className="">
-          <div className="grid lg:grid-cols-2 gap-12 items-center ml-10">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className="mb-4 bg-blue-100 text-black">
-                Vietnam's #1 Online Pharmacy
+              <Badge className="font-poppins font-bold mb-4 bg-blue-100 text-black">
+                Top 10 Best Online Pharmacy in VietNam
               </Badge>
-              <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="font-inter text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 Your Health, <span className="text-blue-600">Our Priority</span>
               </h1>
-              <p className="text-sm text-gray-600 mb-8 leading-relaxed">
+              <p className="font-family-inter text-sm text-gray-600 mb-8 leading-relaxed">
                 Buy medicines online safely and conveniently with Vietnam's
                 leading trusted pharmacy chain.{" "}
                 <strong className="font-bold text-black">
@@ -187,10 +205,108 @@ export function Home() {
           </div>
         </div>
       </section>
+      {/* Services */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left Column: Service Grid */}
+            <div className="grid grid-cols-2 gap-6">
+              <Card className="aspect-square hover:shadow-lg transition-shadow cursor-pointer group">
+                <CardContent className="p-6 flex flex-col items-center justify-center h-full text-center">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors">
+                    <ShoppingCart className="h-8 w-8 text-blue-600" />
+                  </div>
+                  <h3 className="font-semibold text-lg mb-3">Online Pharmacy</h3>
+                  <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                    Shop for a wide range of genuine medicines and healthcare products through our trusted online pharmacy.
+                  </p>
+                  <Button variant="outline" size="sm" className="mt-auto">
+                    Learn More
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="aspect-square hover:shadow-lg transition-shadow cursor-pointer group">
+                <CardContent className="p-6 flex flex-col items-center justify-center h-full text-center">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors">
+                    <Truck className="h-8 w-8 text-green-600" />
+                  </div>
+                  <h3 className="font-semibold text-lg mb-3">Upload Prescription</h3>
+                  <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                    Simply upload your doctor’s prescription using our secure platform. Our pharmacists will review and process your order quickly
+                  </p>
+                  <Button variant="outline" size="sm" className="mt-auto">
+                    Learn More
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="aspect-square hover:shadow-lg transition-shadow cursor-pointer group">
+                <CardContent className="p-6 flex flex-col items-center justify-center h-full text-center">
+                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors">
+                    <Clock className="h-8 w-8 text-purple-600" />
+                  </div>
+                  <h3 className="font-semibold text-lg mb-3">Vaccination</h3>
+                  <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                    Book your vaccinations with ease through our online system. We offer a variety of vaccines administered by certified professionals at trusted locations
+                  </p>
+                  <Button variant="outline" size="sm" className="mt-auto">
+                    Learn More
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="aspect-square hover:shadow-lg transition-shadow cursor-pointer group">
+                <CardContent className="p-6 flex flex-col items-center justify-center h-full text-center">
+                  <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors">
+                    <Award className="h-8 w-8 text-orange-600" />
+                  </div>
+                  <h3 className="font-semibold text-lg mb-3">Quality Assurance</h3>
+                  <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                    Authentic medicines with quality guarantee and proper storage conditions
+                  </p>
+                  <Button variant="outline" size="sm" className="mt-auto">
+                    Learn More
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Right Column: Title and Description */}
+            <div className="flex flex-col justify-center h-full">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                Our Services
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                Our platform offers a complete suite of healthcare services designed for your convenience. Easily order medicines through our online pharmacy, upload your prescription for quick processing, and book vaccinations without the hassle. Need expert advice? Our online consultations connect you with licensed pharmacists and doctors — all from the comfort of your home.
+              </p>
+              
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0" />
+                  <span className="text-gray-700">Licensed pharmacists available 24/7</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0" />
+                  <span className="text-gray-700">FDA-approved medicines only</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0" />
+                  <span className="text-gray-700">Temperature-controlled storage and delivery</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0" />
+                  <span className="text-gray-700">500+ stores nationwide</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white ml-6">
-        <div className="container">
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
@@ -209,7 +325,7 @@ export function Home() {
 
       {/* Features */}
       <section className="py-16 bg-gray-50">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Why Choose Long Chau?
@@ -266,7 +382,7 @@ export function Home() {
 
       {/* Promotions */}
       <section className="py-16 bg-white">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Special Offers
@@ -309,7 +425,7 @@ export function Home() {
 
       {/* Categories */}
       <section className="py-16 bg-gray-50">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Product Categories
@@ -346,54 +462,10 @@ export function Home() {
         </div>
       </section>
 
-      {/* Services */}
-      <section className="py-16 bg-white">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Our Services
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive healthcare services designed to meet all your
-              medical and wellness needs
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-8">
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">{service.icon}</div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold mb-3">
-                        {service.title}
-                      </h3>
-                      <p className="text-gray-600 mb-4">
-                        {service.description}
-                      </p>
-                      <ul className="space-y-2">
-                        {service.features.map((feature, idx) => (
-                          <li
-                            key={idx}
-                            className="flex items-center text-sm text-gray-600"
-                          >
-                            <CheckCircle className="h-4 w-4 text-blue-600 mr-2 flex-shrink-0" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      
       {/* Featured Products */}
       <section className="py-16 bg-gray-50">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-12">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-2">
@@ -496,7 +568,7 @@ export function Home() {
 
       {/* Health Tips */}
       <section className="py-16 bg-white">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Health Tips & Articles
@@ -549,7 +621,7 @@ export function Home() {
 
       {/* Testimonials */}
       <section className="py-16 bg-gray-50">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               What Our Customers Say
@@ -601,7 +673,7 @@ export function Home() {
 
       {/* Newsletter */}
       <section className="py-16 bg-blue-600">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Stay Updated with Health News
@@ -628,7 +700,7 @@ export function Home() {
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-16">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-5 gap-8">
             <div className="md:col-span-2">
               <div className="flex items-center space-x-2 mb-6">
