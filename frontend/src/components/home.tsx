@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.jpg"
 import { Input } from "@/components/ui/input";
 import {
     Search,
@@ -25,8 +26,7 @@ import {
     Globe,
     FileText,
 } from "lucide-react";
-// import Link from "next/link"
-// import img from "next/img"
+
 
 export function Home() {
     const featuredProducts = [
@@ -337,9 +337,7 @@ export function Home() {
                     <div className="flex items-center space-x-4">
                         <Link to="/" className="flex items-center space-x-2 ml-8">
                             <div className="h-8 w-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                                <span className="text-white font-bold text-sm">
-                                    LC
-                                </span>
+                                <img src={logo} alt="logo"/>
                             </div>
                             <span className="font-bold text-xl text-blue-600">
                                 Long Chau
@@ -416,7 +414,7 @@ export function Home() {
             </header>
 
             {/* Hero Section */}
-            <section className="bg-gradient-to-r from-blue-50 to-indigo-50 py-16">
+            <section className="bg-[linear-gradient(180deg,_#ffffff_0%,_#e0f7ff_100%)] py-16">
                 <div className="">
                     <div className="grid lg:grid-cols-2 gap-12 items-center ml-10">
                         <div>
@@ -429,7 +427,7 @@ export function Home() {
                                     Our Priority
                                 </span>
                             </h1>
-                            <p className="text-sm text-gray-600 mb-8 leading-relaxed">
+                            <p className="text-sm text-gray-800 mb-8 leading-relaxed">
                                 Buy medicines online safely and conveniently
                                 with Vietnam's leading trusted pharmacy chain.{" "}
                                 <strong className="font-bold text-black">
@@ -457,7 +455,7 @@ export function Home() {
                                     </Button>
                                 </Link>
                             </div>
-                            <div className="flex items-center space-x-6 text-sm text-gray-600">
+                            <div className="flex items-center space-x-6 text-sm text-gray-800">
                                 <div className="flex items-center space-x-2">
                                     <CheckCircle className="h-5 w-5 text-green-500" />
                                     <span>Free delivery over 300,000₫</span>
@@ -497,8 +495,8 @@ export function Home() {
             </section>
 
             {/* Stats Section */}
-            <section className="py-16 bg-white ml-6">
-                <div className="container">
+            <section className="py-16 bg-white">
+                <div className="container ml-6">
                     <div className="grid md:grid-cols-4 gap-8">
                         {stats.map((stat, index) => (
                             <div key={index} className="text-center">
@@ -518,13 +516,13 @@ export function Home() {
             </section>
 
             {/* Features */}
-            <section className="py-16 bg-gray-50">
-                <div className="container">
+            <section className="py-16 bg-[linear-gradient(90deg,_rgba(2,0,36,1)_0%,_rgba(9,9,121,1)_8%,_rgba(0,212,255,1)_100%)]">
+                <div className="container ml-8">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                        <h2 className="text-3xl font-bold text-white mb-4">
                             Why Choose Long Chau?
                         </h2>
-                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                        <p className="text-lg text-white max-w-2xl mx-auto">
                             We're committed to providing the best healthcare
                             experience with our comprehensive services and
                             trusted quality.
@@ -585,7 +583,7 @@ export function Home() {
 
             {/* Promotions */}
             <section className="py-16 bg-white">
-                <div className="container">
+                <div className="container ml-8">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-bold text-gray-900 mb-4">
                             Special Offers
@@ -635,8 +633,8 @@ export function Home() {
             </section>
 
             {/* Categories */}
-            <section className="py-16 bg-gray-50">
-                <div className="container">
+            <section className="py-16 bg-[linear-gradient(120deg,_#89f7fe_0%,_#66a6ff_100%)]">
+                <div className="container ml-8">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-bold text-gray-900 mb-4">
                             Product Categories
@@ -680,7 +678,7 @@ export function Home() {
 
             {/* Services */}
             <section className="py-16 bg-white">
-                <div className="container">
+                <div className="container ml-8">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-bold text-gray-900 mb-4">
                             Our Services
@@ -731,14 +729,14 @@ export function Home() {
             </section>
 
             {/* Featured Products */}
-            <section className="py-16 bg-gray-50">
-                <div className="container">
+            <section className="py-16 bg-[linear-gradient(90deg,_#667eea_0%,_#764ba2_100%)]">
+                <div className="container ml-8">
                     <div className="flex justify-between items-center mb-12">
                         <div>
                             <h2 className="text-3xl font-bold text-gray-900 mb-2">
                                 Featured Products
                             </h2>
-                            <p className="text-lg text-gray-600">
+                            <p className="text-lg text-white">
                                 Top-rated products trusted by our customers
                             </p>
                         </div>
@@ -839,7 +837,7 @@ export function Home() {
 
             {/* Health Tips */}
             <section className="py-16 bg-white">
-                <div className="container">
+                <div className="container ml-8">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-bold text-gray-900 mb-4">
                             Health Tips & Articles
@@ -893,13 +891,13 @@ export function Home() {
             </section>
 
             {/* Testimonials */}
-            <section className="py-16 bg-gray-50">
-                <div className="container">
+            <section className="py-16 bg-[linear-gradient(90deg,_#fbc2eb_0%,_#a6c1ee_100%)]">
+                <div className="container ml-8">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-bold text-gray-900 mb-4">
                             What Our Customers Say
                         </h2>
-                        <p className="text-lg text-gray-600">
+                        <p className="text-lg text-black">
                             Trusted by millions of customers across Vietnam
                         </p>
                     </div>
@@ -953,7 +951,7 @@ export function Home() {
 
             {/* Newsletter */}
             <section className="py-16 bg-blue-600">
-                <div className="container">
+                <div className="container ml-8">
                     <div className="max-w-2xl mx-auto text-center">
                         <h2 className="text-3xl font-bold text-white mb-4">
                             Stay Updated with Health News
@@ -980,7 +978,7 @@ export function Home() {
 
             {/* Footer */}
             <footer className="bg-gray-900 text-white py-16">
-                <div className="container">
+                <div className="container ml-8">
                     <div className="grid md:grid-cols-5 gap-8">
                         <div className="md:col-span-2">
                             <div className="flex items-center space-x-2 mb-6">
