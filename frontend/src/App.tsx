@@ -1,10 +1,10 @@
-import { LoginForm } from "@/components/login-form";
-import { SignUpForm } from "@/components/signup-form";
-import { Home } from "@/components/home";
+import { LoginForm } from "@/page/login-form";
+import { SignUpForm } from "@/page/signup-form";
+import { Home } from "@/page/home";
 import { ProductPage } from "@/components/product";
 import { CheckoutPage } from "@/components/checkout";
-import { UploadPrescriptionPage } from "@/components/upload_prescription";
-import { StoreLocationPage } from "@/components/store_location";
+import { UploadPrescriptionPage } from "@/page/upload_prescription";
+import { StoreLocationPage } from "@/page/store_location";
 // import { StaffDashboard } from "@/components/staff_dashboard";
 // import { AdminDashboard } from "@/components/admin_dashboard";
 import { Routes, Route, useLocation } from "react-router-dom";
