@@ -897,7 +897,7 @@ export function Home() {
                         <h2 className="text-3xl font-bold text-gray-900 mb-4">
                             What Our Customers Say
                         </h2>
-                        <p className="text-lg text-black">
+                        <p className="text-lg text-white">
                             Trusted by millions of customers across Vietnam
                         </p>
                     </div>
