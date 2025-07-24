@@ -124,9 +124,9 @@ export function Feature2() {
                     <img
                       src={product.Image}
                       alt={product.name}
-                      width={200}
-                      height={200}
-                      className="w-fit h-fit object-cover rounded-md"
+                      width={100}
+                      height={100}
+                      className="object-cover rounded-md"
                     />
                     <div className="absolute top-2 left-2 flex flex-col space-y-1">
                       {product.prescription && <Badge className="bg-red-500 text-xs">Prescription</Badge>}
