@@ -2,8 +2,8 @@ import { Link } from "react-router-dom"
 import {Phone, Globe, Shield, Award} from "lucide-react"
 export function Footer() {
   return (
-                <footer className="bg-gray-900 text-white py-16">
-                <div className="container ml-8">
+                <footer className="bg-gray-900 text-white py-16 flex items-center justify-center">
+                <div className="container">
                     <div className="grid md:grid-cols-5 gap-8">
                         <div className="md:col-span-2">
                             <div className="flex items-center space-x-2 mb-6">

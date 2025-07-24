@@ -2,7 +2,15 @@ import { Link } from "react-router-dom";
 import { Card, CardContent} from "@/components/ui/card"
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
-import { ArrowRight, Heart, Star, ShoppingCart } from "lucide-react";
+import { ArrowRight, Heart, Star } from "lucide-react";
+import paracetamol from "@/assets/paracetamol.jpg";
+import vitaminc from "@/assets/vitaminc.jpg";
+import amoxilin from "@/assets/amoxilin.png";
+import omg3 from "@/assets/omg3.jpg";
+import biotics from "@/assets/biotics.jpg";
+import canxi from "@/assets/canxi.jpg";
+import iron from "@/assets/iron.jpg";
+import women from "@/assets/women.jpg";
 
 
 export function Feature2() {
@@ -17,6 +25,7 @@ export function Feature2() {
       reviews: 128,
       prescription: false,
       discount: 25,
+      Image: paracetamol
     },
     {
       id: 2,
@@ -27,6 +36,7 @@ export function Feature2() {
       reviews: 256,
       prescription: false,
       bestseller: true,
+      Image: vitaminc
     },
     {
       id: 3,
@@ -36,6 +46,7 @@ export function Feature2() {
       rating: 4.3,
       reviews: 89,
       prescription: true,
+      Image: amoxilin
     },
     {
       id: 4,
@@ -45,6 +56,7 @@ export function Feature2() {
       rating: 4.7,
       reviews: 342,
       prescription: false,
+      Image: omg3
     },
     {
       id: 5,
@@ -55,6 +67,7 @@ export function Feature2() {
       reviews: 198,
       prescription: false,
       new: true,
+      Image: biotics
     },
     {
       id: 6,
@@ -64,6 +77,7 @@ export function Feature2() {
       rating: 4.4,
       reviews: 167,
       prescription: false,
+      Image: canxi
     },
     {
       id: 7,
@@ -73,6 +87,7 @@ export function Feature2() {
       rating: 4.5,
       reviews: 134,
       prescription: false,
+      Image: iron
     },
     {
       id: 8,
@@ -82,6 +97,7 @@ export function Feature2() {
       rating: 4.7,
       reviews: 289,
       prescription: false,
+      Image: women
     },
   ]
 
@@ -90,8 +106,8 @@ export function Feature2() {
         <div className="container ml-8">
           <div className="flex justify-between items-center mb-12">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">Featured Products</h2>
-              <p className="text-lg text-black">Top-rated products trusted by our customers</p>
+              <h2 className="text-3xl font-bold text-white mb-2">Featured Products</h2>
+              <p className="text-lg text-white">Top-rated products trusted by our customers</p>
             </div>
             <Link to="/products">
               <Button variant="outline" size="lg">
@@ -104,13 +120,13 @@ export function Feature2() {
             {featuredProducts.map((product) => (
               <Card key={product.id} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-4">
-                  <div className="relative mb-4">
+                  <div className="relative mb-4 flex items-center justify-center">
                     <img
-                      src="/placeholder.svg?height=200&width=200"
+                      src={product.Image}
                       alt={product.name}
                       width={200}
                       height={200}
-                      className="w-full h-48 object-cover rounded-md"
+                      className="w-fit h-fit object-cover rounded-md"
                     />
                     <div className="absolute top-2 left-2 flex flex-col space-y-1">
                       {product.prescription && <Badge className="bg-red-500 text-xs">Prescription</Badge>}
@@ -142,8 +158,9 @@ export function Feature2() {
                     </div>
                   </div>
                   <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700">
-                    <ShoppingCart className="h-4 w-4 mr-2" />
+                    <div className="h-4 w-4 flex items-center justify-center">
                     Add to Cart
+                    </div>
                   </Button>
                 </CardContent>
               </Card>

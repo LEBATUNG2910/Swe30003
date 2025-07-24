@@ -2,6 +2,10 @@ import {Card, CardContent} from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import pic4 from "@/assets/pic4.jpg"
+import pic5 from "@/assets/pic5.jpg"
+import pic6 from "@/assets/pic6.jpg"
+import pic7 from "@/assets/pic7.jpg"
 
 export function Health() {
 const healthTips = [
@@ -10,7 +14,7 @@ const healthTips = [
             title: "10 Essential Vitamins for Daily Health",
             category: "Nutrition",
             readTime: "5 min read",
-            img: "/placeholder.svg?height=200&width=300",
+            Image: pic4,
             excerpt:
                 "Discover the most important vitamins your body needs every day for optimal health and wellness.",
         },
@@ -19,7 +23,7 @@ const healthTips = [
             title: "Managing Diabetes: A Complete Guide",
             category: "Health Management",
             readTime: "8 min read",
-            img: "/placeholder.svg?height=200&width=300",
+            Image: pic5,
             excerpt:
                 "Learn effective strategies for managing diabetes through medication, diet, and lifestyle changes.",
         },
@@ -28,7 +32,7 @@ const healthTips = [
             title: "Heart Health: Prevention Tips",
             category: "Cardiovascular",
             readTime: "6 min read",
-            img: "/placeholder.svg?height=200&width=300",
+            Image: pic6,
             excerpt:
                 "Simple yet effective ways to maintain a healthy heart and prevent cardiovascular diseases.",
         },
@@ -37,7 +41,7 @@ const healthTips = [
             title: "Boost Your Immune System Naturally",
             category: "Immunity",
             readTime: "4 min read",
-            img: "/placeholder.svg?height=200&width=300",
+            Image: pic7,
             excerpt:
                 "Natural methods and supplements to strengthen your immune system year-round.",
         },
@@ -63,11 +67,9 @@ const healthTips = [
                             >
                                 <div className="relative">
                                     <img
-                                        src={tip.img || "/placeholder.svg"}
+                                        src={tip.Image}
                                         alt={tip.title}
-                                        width={300}
-                                        height={200}
-                                        className="w-full h-48 object-cover rounded-t-lg"
+                                        className="w-full h-full object-cover rounded-t-lg"
                                     />
                                     <Badge className="absolute top-3 left-3 bg-white/90 text-gray-800">
                                         {tip.category}

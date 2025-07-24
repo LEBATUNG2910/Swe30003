@@ -2,11 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { CheckCircle, Truck } from "lucide-react";
+import pic3 from "@/assets/pic3.jpg"
 
 export function Hero() {
     return(
-        <section className="bg-[linear-gradient(180deg,_#ffffff_0%,_#e0f7ff_100%)] py-16">
-                <div className="">
+        <section className="bg-[linear-gradient(180deg,_#ffffff_0%,_#e0f7ff_100%)] py-16 ">
+                
                     <div className="grid lg:grid-cols-2 gap-12 items-center ml-10">
                         <div>
                             <Badge className="mb-4 bg-blue-100 text-black">
@@ -59,7 +60,7 @@ export function Hero() {
                         </div>
                         <div className="relative">
                             <img
-                                src="/placeholder.svg?height=500&width=600"
+                                src={pic3}
                                 alt="Long Chau Pharmacy"
                                 width={600}
                                 height={500}
@@ -82,7 +83,6 @@ export function Hero() {
                             </div>
                         </div>
                     </div>
-                </div>
             </section>
     );
 }

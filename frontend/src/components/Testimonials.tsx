@@ -1,5 +1,9 @@
 import { Card, CardContent} from "@/components/ui/card"
 import {Star, Quote} from "lucide-react"
+import pic8 from "@/assets/pic8.jpg"
+import pic9 from "@/assets/pic9.jpg"
+import pic10 from "@/assets/pic10.jpg"
+
 export function Testimonials() {
 const testimonials = [
         {
@@ -9,7 +13,7 @@ const testimonials = [
             rating: 5,
             comment:
                 "Long Chau has been my go-to pharmacy for years. Their online service is incredibly convenient and the delivery is always on time.",
-            avatar: "/placeholder.svg?height=60&width=60",
+            avatar: pic8,
         },
         {
             id: 2,
@@ -18,7 +22,7 @@ const testimonials = [
             rating: 5,
             comment:
                 "I recommend Long Chau to my patients. They have a wide selection of quality medications and knowledgeable pharmacists.",
-            avatar: "/placeholder.svg?height=60&width=60",
+            avatar: pic9,
         },
         {
             id: 3,
@@ -27,7 +31,7 @@ const testimonials = [
             rating: 5,
             comment:
                 "The prescription upload feature is a game-changer for busy parents. Quick, easy, and reliable service every time.",
-            avatar: "/placeholder.svg?height=60&width=60",
+            avatar: pic10,
         },
     ];
   return (
@@ -64,14 +68,9 @@ const testimonials = [
                                     </p>
                                     <div className="flex items-center">
                                         <img
-                                            src={
-                                                testimonial.avatar ||
-                                                "/placeholder.svg"
-                                            }
+                                            src={testimonial.avatar}
                                             alt={testimonial.name}
-                                            width={48}
-                                            height={48}
-                                            className="rounded-full mr-3"
+                                            className=" w-10 h-10 rounded-lg mr-3"
                                         />
                                         <div>
                                             <p className="font-semibold">

@@ -1,8 +1,8 @@
 import { LoginForm } from "@/page/login-form";
 import { SignUpForm } from "@/page/signup-form";
 import { Home } from "@/page/home";
-import { ProductPage } from "@/components/product";
-import { CheckoutPage } from "@/components/checkout";
+import { ProductPage } from "@/page/product";
+import { CheckoutPage } from "@/page/checkout";
 import { UploadPrescriptionPage } from "@/page/upload_prescription";
 import { StoreLocationPage } from "@/page/store_location";
 // import { StaffDashboard } from "@/components/staff_dashboard";
