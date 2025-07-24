@@ -102,11 +102,11 @@ export function Feature2() {
   ]
 
     return(
-    <section className="py-16 bg-[linear-gradient(90deg,_#667eea_0%,_#764ba2_100%)]">
+    <section className="py-16 bg-[linear-gradient(90deg,_#00c6ff_0%,_#0072ff_100%)]">
         <div className="container ml-8">
           <div className="flex justify-between items-center mb-12">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-2">Featured Products</h2>
+              <h2 className="text-3xl font-bold text-black mb-2">Featured Products</h2>
               <p className="text-lg text-white">Top-rated products trusted by our customers</p>
             </div>
             <Link to="/products">
