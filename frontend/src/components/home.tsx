@@ -304,166 +304,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4 text-blue-600">
-                  {stat.icon}
-                </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-600">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Why Choose Long Chau?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We're committed to providing the best healthcare experience with
-              our comprehensive services and trusted quality.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="pt-8 pb-6">
-                <Shield className="h-16 w-16 text-blue-600 mx-auto mb-6" />
-                <h3 className="font-semibold text-lg mb-3">Safe & Trusted</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Authentic medicines with clear origins, FDA approved, and
-                  quality guaranteed
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="pt-8 pb-6">
-                <Truck className="h-16 w-16 text-blue-600 mx-auto mb-6" />
-                <h3 className="font-semibold text-lg mb-3">Fast Delivery</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Delivery within 2-4 hours in Ho Chi Minh City with
-                  temperature-controlled transport
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="pt-8 pb-6">
-                <Clock className="h-16 w-16 text-blue-600 mx-auto mb-6" />
-                <h3 className="font-semibold text-lg mb-3">24/7 Service</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Customer support and pharmacist consultation available
-                  anytime, anywhere
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="pt-8 pb-6">
-                <MapPin className="h-16 w-16 text-blue-600 mx-auto mb-6" />
-                <h3 className="font-semibold text-lg mb-3">500+ Stores</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Wide network across the country with convenient pickup
-                  locations
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Promotions */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Special Offers
-            </h2>
-            <p className="text-lg text-gray-600">
-              Don't miss out on these amazing deals and promotions
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {promotions.map((promo) => (
-              <Card
-                key={promo.id}
-                className="overflow-hidden hover:shadow-lg transition-shadow"
-              >
-                <div className={`${promo.color} p-6 text-white`}>
-                  <div className="text-2xl font-bold mb-2">
-                    {promo.discount}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">{promo.title}</h3>
-                  <p className="text-white/90">{promo.description}</p>
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="bg-gray-100 px-3 py-1 rounded-full">
-                      <code className="text-sm font-mono">{promo.code}</code>
-                    </div>
-                    <span className="text-sm text-gray-600">
-                      Valid until {promo.validUntil}
-                    </span>
-                  </div>
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                    Claim Offer
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Categories */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Product Categories
-            </h2>
-            <p className="text-lg text-gray-600">
-              Explore our comprehensive range of healthcare products
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {categories.map((category, index) => (
-              <Link key={index} to="/products">
-                <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer group">
-                  <CardContent className="p-6 text-center">
-                    <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
-                      {category.icon}
-                    </div>
-                    <h3 className="font-semibold text-lg mb-2">
-                      {category.name}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-3">
-                      {category.description}
-                    </p>
-                    <Badge variant="secondary" className="mb-2">
-                      {category.count}
-                    </Badge>
-                    <div className="flex items-center justify-center text-blue-600 text-sm font-medium group-hover:text-blue-700">
-                      Shop Now <ArrowRight className="ml-1 h-4 w-4" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      
-      {/* Featured Products */}
+{/* Featured Products */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-12">
@@ -565,6 +406,200 @@ export function Home() {
           </div>
         </div>
       </section>
+
+      {/* Product Categories */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center mb-12">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                Product Categories
+              </h2>
+              <p className="text-lg text-gray-600">
+                Explore our comprehensive range of healthcare products
+              </p>
+            </div>
+            <Link to="/products">
+              <Button variant="outline" size="lg">
+                Show all
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            {categories.slice(0, 6).map((category, index) => (
+              <Link key={index} to="/products" className="group">
+                <div className="flex flex-col items-center text-center hover:transform hover:scale-105 transition-all duration-300">
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-50 to-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:from-blue-100 group-hover:to-blue-200 transition-all duration-300 shadow-md">
+                    <span className="text-3xl">{category.icon}</span>
+                  </div>
+                  <h3 className="font-medium text-sm text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                    {category.name}
+                  </h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4 text-blue-600">
+                  {stat.icon}
+                </div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-gray-600">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section> */}
+
+      {/* Features */}
+      {/* <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Why Choose Long Chau?
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              We're committed to providing the best healthcare experience with
+              our comprehensive services and trusted quality.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardContent className="pt-8 pb-6">
+                <Shield className="h-16 w-16 text-blue-600 mx-auto mb-6" />
+                <h3 className="font-semibold text-lg mb-3">Safe & Trusted</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Authentic medicines with clear origins, FDA approved, and
+                  quality guaranteed
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardContent className="pt-8 pb-6">
+                <Truck className="h-16 w-16 text-blue-600 mx-auto mb-6" />
+                <h3 className="font-semibold text-lg mb-3">Fast Delivery</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Delivery within 2-4 hours in Ho Chi Minh City with
+                  temperature-controlled transport
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardContent className="pt-8 pb-6">
+                <Clock className="h-16 w-16 text-blue-600 mx-auto mb-6" />
+                <h3 className="font-semibold text-lg mb-3">24/7 Service</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Customer support and pharmacist consultation available
+                  anytime, anywhere
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardContent className="pt-8 pb-6">
+                <MapPin className="h-16 w-16 text-blue-600 mx-auto mb-6" />
+                <h3 className="font-semibold text-lg mb-3">500+ Stores</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Wide network across the country with convenient pickup
+                  locations
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section> */}
+
+      {/* Promotions */}
+      {/* <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Special Offers
+            </h2>
+            <p className="text-lg text-gray-600">
+              Don't miss out on these amazing deals and promotions
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {promotions.map((promo) => (
+              <Card
+                key={promo.id}
+                className="overflow-hidden hover:shadow-lg transition-shadow"
+              >
+                <div className={`${promo.color} p-6 text-white`}>
+                  <div className="text-2xl font-bold mb-2">
+                    {promo.discount}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{promo.title}</h3>
+                  <p className="text-white/90">{promo.description}</p>
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="bg-gray-100 px-3 py-1 rounded-full">
+                      <code className="text-sm font-mono">{promo.code}</code>
+                    </div>
+                    <span className="text-sm text-gray-600">
+                      Valid until {promo.validUntil}
+                    </span>
+                  </div>
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                    Claim Offer
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section> */}
+
+      {/* Categories */}
+      {/* <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Product Categories
+            </h2>
+            <p className="text-lg text-gray-600">
+              Explore our comprehensive range of healthcare products
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {categories.map((category, index) => (
+              <Link key={index} to="/products">
+                <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer group">
+                  <CardContent className="p-6 text-center">
+                    <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
+                      {category.icon}
+                    </div>
+                    <h3 className="font-semibold text-lg mb-2">
+                      {category.name}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      {category.description}
+                    </p>
+                    <Badge variant="secondary" className="mb-2">
+                      {category.count}
+                    </Badge>
+                    <div className="flex items-center justify-center text-blue-600 text-sm font-medium group-hover:text-blue-700">
+                      Shop Now <ArrowRight className="ml-1 h-4 w-4" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section> */}
 
       {/* Health Tips */}
       <section className="py-16 bg-white">
