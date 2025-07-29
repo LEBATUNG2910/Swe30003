@@ -22,7 +22,6 @@ import {
   Star,
   ArrowRight,
   Quote,
-  Globe,
   Package,
   Truck,
   Mail,
