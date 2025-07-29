@@ -1,13 +1,14 @@
 import {
   Users,
-  FileText,
-  Stethoscope,
   Truck,
-  Shield,
   MapPin,
   Clock,
   Pill,
+  ShoppingCart,
+  Award,
 } from "lucide-react";
+
+
 
 export const healthTips = [
   {
@@ -77,52 +78,6 @@ export const testimonials = [
   },
 ];
 
-export const services = [
-  {
-    icon: <FileText className="h-8 w-8 text-blue-600" />,
-    title: "Prescription Services",
-    description:
-      "Upload prescriptions online and get medications delivered to your door",
-    features: [
-      "Digital prescription upload",
-      "Pharmacist consultation",
-      "Insurance coverage check",
-    ],
-  },
-  {
-    icon: <Stethoscope className="h-8 w-8 text-blue-600" />,
-    title: "Health Consultations",
-    description:
-      "Get expert advice from licensed pharmacists and healthcare professionals",
-    features: [
-      "Free health consultations",
-      "Medication reviews",
-      "Health screenings",
-    ],
-  },
-  {
-    icon: <Truck className="h-8 w-8 text-blue-600" />,
-    title: "Fast Delivery",
-    description: "Same-day delivery available in major cities across Vietnam",
-    features: [
-      "2-4 hour delivery",
-      "Temperature-controlled transport",
-      "Real-time tracking",
-    ],
-  },
-  {
-    icon: <Shield className="h-8 w-8 text-blue-600" />,
-    title: "Quality Assurance",
-    description:
-      "All medications are sourced from certified manufacturers and suppliers",
-    features: [
-      "FDA approved products",
-      "Batch tracking",
-      "Expiry date monitoring",
-    ],
-  },
-];
-
 export const stats = [
   {
     number: "500+",
@@ -174,4 +129,35 @@ export const promotions = [
     validUntil: "Jan 15, 2025",
     color: "bg-gradient-to-r from-blue-500 to-indigo-600",
   },
+];
+
+export const services = [
+  {
+    icon: ShoppingCart,
+    title: "Online Pharmacy",
+    description: "Shop for a wide range of genuine medicines and healthcare products through our trusted online pharmacy.",
+    bgColor: "bg-blue-500",
+    hoverColor: "hover:bg-blue-600"
+  },
+  {
+    icon: Truck,
+    title: "Upload Prescription",
+    description: "Simply upload your doctor's prescription using our secure platform. Our pharmacists will review and process your order quickly.",
+    bgColor: "bg-green-500",
+    hoverColor: "hover:bg-green-600"
+  },
+  {
+    icon: Clock,
+    title: "Vaccination",
+    description: "Book your vaccinations with ease through our online system. We offer a variety of vaccines administered by certified professionals at trusted locations.",
+    bgColor: "bg-purple-500",
+    hoverColor: "hover:bg-purple-600"
+  },
+  {
+    icon: Award,
+    title: "Quality Assurance",
+    description: "Authentic medicines with quality guarantee and proper storage conditions to ensure your health and safety.",
+    bgColor: "bg-indigo-500",
+    hoverColor: "hover:bg-indigo-600"
+  }
 ];

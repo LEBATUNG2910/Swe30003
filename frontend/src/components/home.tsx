@@ -8,6 +8,7 @@ import { featuredProducts } from "@/data/featuredProducts";
 import { categories } from "@/data/categories";
 import {
   healthTips,
+  services,
   testimonials,
 } from "@/data/HomePageContent";
 import {
@@ -18,16 +19,13 @@ import {
   Heart,
   Phone,
   Star,
-  Shield,
-  Truck,
-  Clock,
-  Award,
   ArrowRight,
   Quote,
   Globe,
   Package,
   TruckElectric,
 } from "lucide-react";
+import { Footer } from "./Footer";
 // import Link from "next/link"
 // import img from "next/img"
 
@@ -207,85 +205,68 @@ export function Home() {
       </section>
 
       {/* Our Services Section*/}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left Column: Service Grid */}
-            {/* //TODO: Change bg color to a more blue color, add arrow atend of Learn More */}
-            <div className="grid grid-cols-2 gap-6">
-              <Card className="aspect-square hover:shadow-lg transition-shadow cursor-pointer group">
-                <CardContent className="p-6 flex flex-col items-center justify-center h-full text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors">
-                    <ShoppingCart className="h-8 w-8 text-blue-600" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-3">Online Pharmacy</h3>
-                  <p className="text-sm text-gray-600 mb-4 leading-relaxed">
-                    Shop for a wide range of genuine medicines and healthcare products through our trusted online pharmacy.
-                  </p>
-                  <Button variant="outline" size="sm" className="mt-auto">
-                    Learn More
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card className="aspect-square hover:shadow-lg transition-shadow cursor-pointer group">
-                <CardContent className="p-6 flex flex-col items-center justify-center h-full text-center">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors">
-                    <Truck className="h-8 w-8 text-green-600" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-3">Upload Prescription</h3>
-                  <p className="text-sm text-gray-600 mb-4 leading-relaxed">
-                    Simply upload your doctor’s prescription using our secure platform. Our pharmacists will review and process your order quickly
-                  </p>
-                  <Button variant="outline" size="sm" className="mt-auto">
-                    Learn More
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card className="aspect-square hover:shadow-lg transition-shadow cursor-pointer group">
-                <CardContent className="p-6 flex flex-col items-center justify-center h-full text-center">
-                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors">
-                    <Clock className="h-8 w-8 text-purple-600" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-3">Vaccination</h3>
-                  <p className="text-sm text-gray-600 mb-4 leading-relaxed">
-                    Book your vaccinations with ease through our online system. We offer a variety of vaccines administered by certified professionals at trusted locations
-                  </p>
-                  <Button variant="outline" size="sm" className="mt-auto">
-                    Learn More
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card className="aspect-square hover:shadow-lg transition-shadow cursor-pointer group">
-                <CardContent className="p-6 flex flex-col items-center justify-center h-full text-center">
-                  <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors">
-                    <Award className="h-8 w-8 text-orange-600" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-3">Quality Assurance</h3>
-                  <p className="text-sm text-gray-600 mb-4 leading-relaxed">
-                    Authentic medicines with quality guarantee and proper storage conditions
-                  </p>
-                  <Button variant="outline" size="sm" className="mt-auto">
-                    Learn More
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Right Column: Title and Description */}
-            <div className="flex flex-col justify-center h-full">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Our Services
+       <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <div className="container mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Left Column: Service Grid */}
+          <div className="grid grid-cols-2 gap-6">
+            {services.map((service, index) => {
+              const IconComponent = service.icon;
+              return (
+                <Card key={index} className="hover:shadow-xl transition-all duration-300 cursor-pointer group hover:-translate-y-1">
+                  <CardContent className="p-6 flex flex-col h-80">
+                    {/* Fixed Logo Position */}
+                    <div className="flex justify-center mb-6">
+                      <div className={`w-20 h-20 ${service.bgColor} ${service.hoverColor} rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-lg`}>
+                        <IconComponent className="h-10 w-10 text-white" />
+                      </div>
+                    </div>
+                    
+                    {/* Fixed Title Position */}
+                    <div className="text-center mb-4">
+                      <h3 className="font-bold text-xl text-gray-800 leading-tight">
+                        {service.title}
+                      </h3>
+                    </div>
+                    
+                    {/* Fixed Description Position - with flex-grow to take available space */}
+                    <div className="flex-grow flex items-start justify-center mb-6">
+                      <p className="text-sm text-gray-600 leading-relaxed text-center line-clamp-4">
+                        {service.description}
+                      </p>
+                    </div>
+                    
+                    {/* Fixed Button Position */}
+                    <div className="flex justify-center">
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="group-hover:bg-blue-50 group-hover:border-blue-300 group-hover:text-blue-700 transition-all duration-300 font-medium"
+                      >
+                        Learn More
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+          
+          {/* Right Column - You can add content here */}
+          <div className="flex items-center justify-center h-full">
+    <div className="text-center">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Our Healthcare Services
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                Our platform offers a complete suite of healthcare services designed for your convenience. Easily order medicines through our online pharmacy, upload your prescription for quick processing, and book vaccinations without the hassle. Need expert advice? Our online consultations connect you with licensed pharmacists and doctors — all from the comfort of your home.
-              </p>              
+              <p className="text-lg text-gray-600 leading-relaxed">
+                We provide comprehensive healthcare solutions designed to make your medical needs more accessible and convenient. From online pharmacy services to professional vaccinations, we're committed to your health and wellbeing.
+              </p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
     {/* Featured Products Section */}
     {/* //TODO: Add pic for each product, edit the price */}
@@ -695,15 +676,15 @@ export function Home() {
 
       {/* Contact Us */}
       {/* TODO: Edit the appearance of input boxes */}
-      <section className="py-16 bg-blue-600">
-        <div className="container mx-auto px-4">
+      <section className="py-8 bg-blue-100">
+        <div className="container mx-auto px-2">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Contact Form */}
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-4">
+            <div className="text-center">
+              <h2 className="text-5xl font-bold text-black mb-4">
                 Contact Us
               </h2>
-              <p className="text-blue-100 mb-8 text-lg">
+              <p className="text-black mb-8 text-2xl font-bold">
                 We are here for you, how can we help?
               </p>
               <div className="space-y-4">
@@ -719,37 +700,36 @@ export function Home() {
                 <textarea
                   placeholder="Go ahead, we are listening..."
                   rows={4}
-                  className="w-full px-3 py-2 rounded-md border-0 focus:ring-2 focus:ring-blue-400 focus:outline-none resize-none"
+                  className="w-full px-3 py-2 rounded-md border-0 bg-white focus:ring-2 focus:ring-blue-400 focus:outline-none resize-none"
                 />
-                <Button className="bg-white text-blue-600 hover:bg-gray-100 w-full sm:w-auto px-8">
+                <Button className="bg-blue-600 text-white hover:bg-blue-700 font-bold w-7/8 px-8">
                   Submit
                 </Button>
               </div>
             </div>
 
             {/* Right Column - Support Info */}
-            {/* //TODO: Edit appearance of each element */}
-            <div className="text-center lg:text-left">
-              <div className="flex justify-center lg:justify-start mb-6">
-                <div className="w-24 h-24 bg-white/10 rounded-full flex items-center justify-center">
-                  <Phone className="h-12 w-12 text-white" />
+            <div className="text-center">
+              <div className="flex justify-center mb-6">
+                <div className="w-64 h-64 bg-black rounded-full flex items-center justify-center">
+                  <Phone className="h-16 w-16 text-black" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-6">
+              <h3 className="text-2xl font-bold text-black mb-6">
                 Customer Support Contact
               </h3>
               <div className="space-y-4">
-                <div className="flex items-center justify-center lg:justify-start space-x-3">
-                  <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
-                    <Phone className="h-4 w-4 text-white" />
+                <div className="flex items-center justify-center space-x-3">
+                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                    <Phone className="h-6 w-6 text-blue-600" />
                   </div>
-                  <span className="text-white text-lg">1800 6928 (Free hotline)</span>
+                  <span className="text-black text-lg">1800 6928 (Free hotline)</span>
                 </div>
-                <div className="flex items-center justify-center lg:justify-start space-x-3">
-                  <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
-                    <Globe className="h-4 w-4 text-white" />
+                <div className="flex items-center justify-center space-x-3">
+                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                    <Globe className="h-6 w-6 text-blue-600" />
                   </div>
-                  <span className="text-white text-lg">support@longchau.com.vn</span>
+                  <span className="text-black text-lg">support@longchau.com.vn</span>
                 </div>
               </div>
             </div>
@@ -757,187 +737,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      {/* //TODO: Make a united footer for every webpage */}
-      <footer className="bg-gray-900 text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-5 gap-8">
-            <div className="md:col-span-2">
-              <div className="flex items-center space-x-2 mb-6">
-                <div className="h-10 w-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold">LC</span>
-                </div>
-                <span className="font-bold text-2xl">Long Chau</span>
-              </div>
-              <p className="text-gray-400 mb-6 leading-relaxed">
-                Vietnam's leading trusted pharmacy chain, committed to providing
-                quality healthcare products and services to millions of
-                customers nationwide.
-              </p>
-              <div className="flex items-center space-x-4 mb-4">
-                <Phone className="h-5 w-5 text-blue-400" />
-                <span>1800 6928 (Free hotline)</span>
-              </div>
-              <div className="flex items-center space-x-4">
-                <Globe className="h-5 w-5 text-blue-400" />
-                <span>www.longchau.com.vn</span>
-              </div>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-6 text-lg">Products</h3>
-              <ul className="space-y-3 text-gray-400">
-                <li>
-                  <Link
-                    to="/products"
-                    className="hover:text-white transition-colors"
-                  >
-                    Prescription Drugs
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/products"
-                    className="hover:text-white transition-colors"
-                  >
-                    Over-the-Counter
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/products"
-                    className="hover:text-white transition-colors"
-                  >
-                    Supplements
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/products"
-                    className="hover:text-white transition-colors"
-                  >
-                    Personal Care
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/products"
-                    className="hover:text-white transition-colors"
-                  >
-                    Medical Devices
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-6 text-lg">Services</h3>
-              <ul className="space-y-3 text-gray-400">
-                <li>
-                  <Link
-                    to="/prescription"
-                    className="hover:text-white transition-colors"
-                  >
-                    Upload Prescription
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/branches"
-                    className="hover:text-white transition-colors"
-                  >
-                    Find Store
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/loyalty"
-                    className="hover:text-white transition-colors"
-                  >
-                    Loyalty Program
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/orders"
-                    className="hover:text-white transition-colors"
-                  >
-                    Track Order
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/consultation"
-                    className="hover:text-white transition-colors"
-                  >
-                    Health Consultation
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-6 text-lg">Support</h3>
-              <ul className="space-y-3 text-gray-400">
-                <li>
-                  <Link
-                    to="/contact"
-                    className="hover:text-white transition-colors"
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/faq"
-                    className="hover:text-white transition-colors"
-                  >
-                    FAQ
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/policy"
-                    className="hover:text-white transition-colors"
-                  >
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/terms"
-                    className="hover:text-white transition-colors"
-                  >
-                    Terms of Service
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/careers"
-                    className="hover:text-white transition-colors"
-                  >
-                    Careers
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-12 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <p className="text-gray-400 mb-4 md:mb-0">
-                &copy; 2024 Long Chau Pharmacy. All rights reserved.
-              </p>
-              <div className="flex items-center space-x-6">
-                <div className="flex items-center space-x-2">
-                  <Shield className="h-4 w-4 text-blue-400" />
-                  <span className="text-sm text-gray-400">SSL Secured</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Award className="h-4 w-4 text-blue-400" />
-                  <span className="text-sm text-gray-400">FDA Approved</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
