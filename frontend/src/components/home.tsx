@@ -11,6 +11,7 @@ import {
   services,
   testimonials,
 } from "@/data/HomePageContent";
+import { CONTACTUS_IMAGES, HERO_IMAGES } from "@/constants/images";
 import {
   Search,
   ShoppingCart,
@@ -23,7 +24,8 @@ import {
   Quote,
   Globe,
   Package,
-  TruckElectric,
+  Truck,
+  Mail,
 } from "lucide-react";
 import { Footer } from "./Footer";
 // import Link from "next/link"
@@ -179,7 +181,7 @@ export function Home() {
             </div>
             <div className="relative">
               <img
-                src="/placeholder.svg?height=500&width=600"
+                src={HERO_IMAGES.pharmacy}
                 alt="Long Chau Pharmacy"
                 width={600}
                 height={500}
@@ -189,7 +191,7 @@ export function Home() {
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
                     {/* Fast delivery with speed icon */}
-                    <TruckElectric className="h-8 w-8 text-black" />
+                    <Truck className="h-8 w-8 text-black" />
                   </div>
                   <div>
                     <p className="font-semibold">Fast Delivery</p>
@@ -211,27 +213,36 @@ export function Home() {
           {/* Left Column: Service Grid */}
           <div className="grid grid-cols-2 gap-6">
             {services.map((service, index) => {
-              const IconComponent = service.icon;
+              // const IconComponent = service.icon;
               return (
                 <Card key={index} className="hover:shadow-xl transition-all duration-300 cursor-pointer group hover:-translate-y-1">
                   <CardContent className="p-6 flex flex-col h-80">
-                    {/* Fixed Logo Position */}
-                    <div className="flex justify-center mb-6">
-                      <div className={`w-20 h-20 ${service.bgColor} ${service.hoverColor} rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-lg`}>
-                        <IconComponent className="h-10 w-10 text-white" />
-                      </div>
+                    {/* Service Image */}
+                    <div className="mb-4 overflow-hidden rounded-md">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-24 object-scale-down object-center transition-transform duration-300 group-hover:scale-105"
+                      />
                     </div>
                     
+                    {/* Fixed Logo Position */}
+                    {/* <div className="flex justify-center mb-4">
+                      <div className={`w-16 h-16 ${service.bgColor} ${service.hoverColor} rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-lg`}>
+                        <IconComponent className="h-8 w-8 text-white" />
+                      </div>
+                    </div> */}
+                    
                     {/* Fixed Title Position */}
-                    <div className="text-center mb-4">
-                      <h3 className="font-bold text-xl text-gray-800 leading-tight">
+                    <div className="text-center mb-3">
+                      <h3 className="font-bold text-lg text-gray-800 leading-tight">
                         {service.title}
                       </h3>
                     </div>
                     
                     {/* Fixed Description Position - with flex-grow to take available space */}
-                    <div className="flex-grow flex items-start justify-center mb-6">
-                      <p className="text-sm text-gray-600 leading-relaxed text-center line-clamp-4">
+                    <div className="flex-grow flex items-start justify-center mb-4">
+                      <p className="text-xs text-gray-600 leading-relaxed text-center line-clamp-3">
                         {service.description}
                       </p>
                     </div>
@@ -269,7 +280,6 @@ export function Home() {
     </section>
 
     {/* Featured Products Section */}
-    {/* //TODO: Add pic for each product, edit the price */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-12">
@@ -373,7 +383,6 @@ export function Home() {
       </section>
 
       {/* Product Categories Section */}
-      {/* //TODO: Add product avatar for each category */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-12">
@@ -396,8 +405,12 @@ export function Home() {
             {categories.slice(0, 6).map((category, index) => (
               <Link key={index} to="/products" className="group">
                 <div className="flex flex-col items-center text-center hover:transform hover:scale-105 transition-all duration-300">
-                  <div className="w-20 h-20 bg-gradient-to-br from-blue-50 to-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:from-blue-100 group-hover:to-blue-200 transition-all duration-300 shadow-md">
-                    <span className="text-3xl">{category.icon}</span>
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-50 to-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:from-blue-100 group-hover:to-blue-200 transition-all duration-300 shadow-md p-3">
+                    <img 
+                      src={category.image} 
+                      alt={category.name} 
+                      className="w-full h-full object-scale-down"
+                    />
                   </div>
                   <h3 className="font-medium text-sm text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
                     {category.name}
@@ -568,7 +581,6 @@ export function Home() {
       </section> */}
 
       {/* Health Tips */}
-      {/* //TODO: Add images for each health tip */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -583,15 +595,15 @@ export function Home() {
             {healthTips.map((tip) => (
               <Card
                 key={tip.id}
-                className="hover:shadow-lg transition-shadow cursor-pointer"
+                className="hover:shadow-lg transition-shadow overflow-hidden cursor-pointer"
               >
-                <div className="relative">
+                <div className="relative overflow-hidden">
                   <img
                     src={tip.img || "/placeholder.svg"}
                     alt={tip.title}
                     width={300}
                     height={200}
-                    className="w-full h-48 object-cover rounded-t-lg"
+                    className="w-full h-48 object-cover object-center rounded-t-lg transition-transform duration-300 hover:scale-105"
                   />
                   <Badge className="absolute top-3 left-3 bg-white/90 text-gray-800">
                     {tip.category}
@@ -622,7 +634,6 @@ export function Home() {
       </section>
 
       {/* Testimonials */}
-      {/* //TODO: Add avatar for each customers */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -658,7 +669,7 @@ export function Home() {
                       alt={testimonial.name}
                       width={48}
                       height={48}
-                      className="rounded-full mr-3"
+                      className="h-16 w-16 rounded-full mr-4 object-cover"
                     />
                     <div>
                       <p className="font-semibold">{testimonial.name}</p>
@@ -675,7 +686,6 @@ export function Home() {
       </section>
 
       {/* Contact Us */}
-      {/* TODO: Edit the appearance of input boxes */}
       <section className="py-8 bg-blue-100">
         <div className="container mx-auto px-2">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -702,7 +712,7 @@ export function Home() {
                   rows={4}
                   className="w-full px-3 py-2 rounded-md border-0 bg-white focus:ring-2 focus:ring-blue-400 focus:outline-none resize-none"
                 />
-                <Button className="bg-blue-600 text-white hover:bg-blue-700 font-bold w-7/8 px-8">
+                <Button className="bg-blue-600 text-white hover:bg-blue-700 font-bold w-7/8 px-8 text-2xl">
                   Submit
                 </Button>
               </div>
@@ -712,7 +722,7 @@ export function Home() {
             <div className="text-center">
               <div className="flex justify-center mb-6">
                 <div className="w-64 h-64 bg-black rounded-full flex items-center justify-center">
-                  <Phone className="h-16 w-16 text-black" />
+                  <img src={CONTACTUS_IMAGES.contactUs} className="object-cover" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-black mb-6">
@@ -721,13 +731,13 @@ export function Home() {
               <div className="space-y-4">
                 <div className="flex items-center justify-center space-x-3">
                   <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                    <Phone className="h-6 w-6 text-blue-600" />
+                    <Mail className="h-6 w-6 text-black" />
                   </div>
                   <span className="text-black text-lg">1800 6928 (Free hotline)</span>
                 </div>
                 <div className="flex items-center justify-center space-x-3">
                   <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                    <Globe className="h-6 w-6 text-blue-600" />
+                    <Phone className="h-6 w-6 text-black" />
                   </div>
                   <span className="text-black text-lg">support@longchau.com.vn</span>
                 </div>

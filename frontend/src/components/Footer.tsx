@@ -5,6 +5,7 @@ import {
   Shield,
   Award,
 } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 export function Footer() {
   return (
@@ -14,9 +15,13 @@ export function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
               <div className="h-10 w-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">LC</span>
+                <img
+                src={logo}
+                alt="Logo"
+                className="object-cover rounded-lg"
+              />
               </div>
-              <span className="font-bold text-2xl">Long Chau</span>
+              <span className="font-bold text-2xl">Long Châu Pharmacy</span>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Vietnam's leading trusted pharmacy chain, committed to providing
