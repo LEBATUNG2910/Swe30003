@@ -9,9 +9,6 @@ import { categories } from "@/data/categories";
 import {
   healthTips,
   testimonials,
-  services,
-  stats,
-  promotions,
 } from "@/data/HomePageContent";
 import {
   Search,
@@ -19,17 +16,17 @@ import {
   User,
   Bell,
   Heart,
-  MapPin,
   Phone,
   Star,
   Shield,
   Truck,
   Clock,
   Award,
-  CheckCircle,
   ArrowRight,
   Quote,
   Globe,
+  Package,
+  TruckElectric,
 } from "lucide-react";
 // import Link from "next/link"
 // import img from "next/img"
@@ -135,11 +132,12 @@ export function Home() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className="font-poppins font-bold mb-4 bg-blue-100 text-black">
+              <Badge className="font-poppins text-xl font-bold mb-2 bg-blue-100 text-black">
                 Top 10 Best Online Pharmacy in VietNam
               </Badge>
+              {/* // TODO: Find a way to change font really, bold it */}
               <h1 className="font-inter text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Your Health, <span className="text-blue-600">Our Priority</span>
+                Your Health,<br /> <span className="text-blue-600">Our Priority</span>
               </h1>
               <p className="font-family-inter text-sm text-gray-600 mb-8 leading-relaxed">
                 Buy medicines online safely and conveniently with Vietnam's
@@ -169,13 +167,14 @@ export function Home() {
                   </Button>
                 </Link>
               </div>
+              {/* Feature highlights with appropriate icons */}
               <div className="flex items-center space-x-6 text-sm text-gray-600">
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
+                <div className="flex items-center space-x-1">
+                  <Package className="h-5 w-5 text-green-500" />
                   <span>Free delivery over 300,000₫</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
+                <div className="flex items-center space-x-1">
+                  <Phone className="h-5 w-5 text-green-500" />
                   <span>24/7 pharmacist support</span>
                 </div>
               </div>
@@ -191,7 +190,8 @@ export function Home() {
               <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg">
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Truck className="h-6 w-6 text-blue-600" />
+                    {/* Fast delivery with speed icon */}
+                    <TruckElectric className="h-8 w-8 text-black" />
                   </div>
                   <div>
                     <p className="font-semibold">Fast Delivery</p>
@@ -205,11 +205,13 @@ export function Home() {
           </div>
         </div>
       </section>
-      {/* Services */}
+
+      {/* Our Services Section*/}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Column: Service Grid */}
+            {/* //TODO: Change bg color to a more blue color, add arrow atend of Learn More */}
             <div className="grid grid-cols-2 gap-6">
               <Card className="aspect-square hover:shadow-lg transition-shadow cursor-pointer group">
                 <CardContent className="p-6 flex flex-col items-center justify-center h-full text-center">
@@ -279,32 +281,14 @@ export function Home() {
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
                 Our platform offers a complete suite of healthcare services designed for your convenience. Easily order medicines through our online pharmacy, upload your prescription for quick processing, and book vaccinations without the hassle. Need expert advice? Our online consultations connect you with licensed pharmacists and doctors — all from the comfort of your home.
-              </p>
-              
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0" />
-                  <span className="text-gray-700">Licensed pharmacists available 24/7</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0" />
-                  <span className="text-gray-700">FDA-approved medicines only</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0" />
-                  <span className="text-gray-700">Temperature-controlled storage and delivery</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0" />
-                  <span className="text-gray-700">500+ stores nationwide</span>
-                </div>
-              </div>
+              </p>              
             </div>
           </div>
         </div>
       </section>
 
-{/* Featured Products */}
+    {/* Featured Products Section */}
+    {/* //TODO: Add pic for each product, edit the price */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-12">
@@ -407,7 +391,8 @@ export function Home() {
         </div>
       </section>
 
-      {/* Product Categories */}
+      {/* Product Categories Section */}
+      {/* //TODO: Add product avatar for each category */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-12">
@@ -602,6 +587,7 @@ export function Home() {
       </section> */}
 
       {/* Health Tips */}
+      {/* //TODO: Add images for each health tip */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -655,6 +641,7 @@ export function Home() {
       </section>
 
       {/* Testimonials */}
+      {/* //TODO: Add avatar for each customers */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -707,6 +694,7 @@ export function Home() {
       </section>
 
       {/* Contact Us */}
+      {/* TODO: Edit the appearance of input boxes */}
       <section className="py-16 bg-blue-600">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -740,6 +728,7 @@ export function Home() {
             </div>
 
             {/* Right Column - Support Info */}
+            {/* //TODO: Edit appearance of each element */}
             <div className="text-center lg:text-left">
               <div className="flex justify-center lg:justify-start mb-6">
                 <div className="w-24 h-24 bg-white/10 rounded-full flex items-center justify-center">
@@ -769,6 +758,7 @@ export function Home() {
       </section>
 
       {/* Footer */}
+      {/* //TODO: Make a united footer for every webpage */}
       <footer className="bg-gray-900 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-5 gap-8">
