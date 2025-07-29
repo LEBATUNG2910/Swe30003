@@ -16,6 +16,7 @@ export const featuredProducts = [
   {
     id: 2,
     name: "Vitamin C 1000mg",
+    image: PRODUCT_IMAGES.vitaminC,
     price: "85,000đ",
     brand: "DHG Pharma",
     rating: 4.8,
@@ -26,6 +27,7 @@ export const featuredProducts = [
   {
     id: 3,
     name: "Amoxicillin 500mg",
+    image: PRODUCT_IMAGES.amoxicillin,
     price: "45,000đ",
     brand: "Imexpharm",
     rating: 4.3,
@@ -35,6 +37,7 @@ export const featuredProducts = [
   {
     id: 4,
     name: "Omega-3 Fish Oil",
+    image: PRODUCT_IMAGES.omega3,
     price: "920,000đ",
     brand: "Have fun Factory Co., Ltd",
     rating: 4.7,
@@ -44,6 +47,7 @@ export const featuredProducts = [
   {
     id: 5,
     name: "Bifido Plus Probiotic",
+    image: PRODUCT_IMAGES.bifidoPlus,
     price: "990,000đ",
     brand: "ALIMENT INDUSTRY CO.,LTD",
     rating: 4.6,
@@ -53,7 +57,8 @@ export const featuredProducts = [
   },
   {
     id: 6,
-    name: "CCalci K-2 Cãni",
+    name: "Calci K-2 Canxi",
+    image: PRODUCT_IMAGES.canxi,
     price: "446,500đ",
     brand: "ARNET PHARMACEUTICAL CORP",
     rating: 4.4,
@@ -63,6 +68,7 @@ export const featuredProducts = [
   {
     id: 7,
     name: "Iron Ferrolip UGA",
+    image: PRODUCT_IMAGES.iron,
     price: "105,000đ",
     brand: "Fine Food & Pharmaceutical",
     rating: 4.5,
@@ -72,6 +78,7 @@ export const featuredProducts = [
   {
     id: 8,
     name: "Immuvita Easylife Multivitamin",
+    image: PRODUCT_IMAGES.multivitamin,
     price: "390,000đ",
     brand: "C. HEDENKAMP GMBH & CO. KG",
     rating: 4.7,
