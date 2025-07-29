@@ -297,7 +297,7 @@ export function Home() {
                 <CardContent className="p-4">
                   <div className="relative mb-4">
                     <img
-                      src="/placeholder.svg?height=200&width=200"
+                      src={product.image || "/placeholder.svg?height=200&width=200"}
                       alt={product.name}
                       width={200}
                       height={200}

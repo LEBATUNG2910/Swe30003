@@ -1,7 +1,10 @@
+import { PRODUCT_IMAGES } from '../constants/images';
+
 export const featuredProducts = [
   {
     id: 1,
     name: "Paracetamol 500mg",
+    image: PRODUCT_IMAGES.paracetamol,
     price: "50,000đ",
     originalPrice: "55,000đ",
     brand: "Stella",
