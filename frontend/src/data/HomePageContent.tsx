@@ -1,13 +1,11 @@
 import {
   Users,
-  FileText,
-  Stethoscope,
-  Truck,
-  Shield,
   MapPin,
   Clock,
   Pill,
 } from "lucide-react";
+import { SERVICE_IMAGES, HEALTH_TIP_IMAGES, TESTIMONIAL_IMAGES } from '../constants/images';
+
 
 export const healthTips = [
   {
@@ -15,7 +13,7 @@ export const healthTips = [
     title: "10 Essential Vitamins for Daily Health",
     category: "Nutrition",
     readTime: "5 min read",
-    img: "/placeholder.svg?height=200&width=300",
+    img: HEALTH_TIP_IMAGES.tips1,
     excerpt:
       "Discover the most important vitamins your body needs every day for optimal health and wellness.",
   },
@@ -24,7 +22,7 @@ export const healthTips = [
     title: "Managing Diabetes: A Complete Guide",
     category: "Health Management",
     readTime: "8 min read",
-    img: "/placeholder.svg?height=200&width=300",
+    img: HEALTH_TIP_IMAGES.tips2,
     excerpt:
       "Learn effective strategies for managing diabetes through medication, diet, and lifestyle changes.",
   },
@@ -33,7 +31,7 @@ export const healthTips = [
     title: "Heart Health: Prevention Tips",
     category: "Cardiovascular",
     readTime: "6 min read",
-    img: "/placeholder.svg?height=200&width=300",
+    img: HEALTH_TIP_IMAGES.tips3,
     excerpt:
       "Simple yet effective ways to maintain a healthy heart and prevent cardiovascular diseases.",
   },
@@ -42,7 +40,7 @@ export const healthTips = [
     title: "Boost Your Immune System Naturally",
     category: "Immunity",
     readTime: "4 min read",
-    img: "/placeholder.svg?height=200&width=300",
+    img: HEALTH_TIP_IMAGES.tips4,
     excerpt:
       "Natural methods and supplements to strengthen your immune system year-round.",
   },
@@ -55,7 +53,7 @@ export const testimonials = [
     rating: 5,
     comment:
       "Long Chau has been my go-to pharmacy for years. Their online service is incredibly convenient and the delivery is always on time.",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: TESTIMONIAL_IMAGES.person1,
   },
   {
     id: 2,
@@ -64,7 +62,7 @@ export const testimonials = [
     rating: 5,
     comment:
       "I recommend Long Chau to my patients. They have a wide selection of quality medications and knowledgeable pharmacists.",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: TESTIMONIAL_IMAGES.person2,
   },
   {
     id: 3,
@@ -73,53 +71,7 @@ export const testimonials = [
     rating: 5,
     comment:
       "The prescription upload feature is a game-changer for busy parents. Quick, easy, and reliable service every time.",
-    avatar: "/placeholder.svg?height=60&width=60",
-  },
-];
-
-export const services = [
-  {
-    icon: <FileText className="h-8 w-8 text-blue-600" />,
-    title: "Prescription Services",
-    description:
-      "Upload prescriptions online and get medications delivered to your door",
-    features: [
-      "Digital prescription upload",
-      "Pharmacist consultation",
-      "Insurance coverage check",
-    ],
-  },
-  {
-    icon: <Stethoscope className="h-8 w-8 text-blue-600" />,
-    title: "Health Consultations",
-    description:
-      "Get expert advice from licensed pharmacists and healthcare professionals",
-    features: [
-      "Free health consultations",
-      "Medication reviews",
-      "Health screenings",
-    ],
-  },
-  {
-    icon: <Truck className="h-8 w-8 text-blue-600" />,
-    title: "Fast Delivery",
-    description: "Same-day delivery available in major cities across Vietnam",
-    features: [
-      "2-4 hour delivery",
-      "Temperature-controlled transport",
-      "Real-time tracking",
-    ],
-  },
-  {
-    icon: <Shield className="h-8 w-8 text-blue-600" />,
-    title: "Quality Assurance",
-    description:
-      "All medications are sourced from certified manufacturers and suppliers",
-    features: [
-      "FDA approved products",
-      "Batch tracking",
-      "Expiry date monitoring",
-    ],
+    avatar: TESTIMONIAL_IMAGES.person3,
   },
 ];
 
@@ -174,4 +126,35 @@ export const promotions = [
     validUntil: "Jan 15, 2025",
     color: "bg-gradient-to-r from-blue-500 to-indigo-600",
   },
+];
+
+export const services = [
+  {
+    title: "Online Pharmacy",
+    image: SERVICE_IMAGES.onlinePharmacy,
+    description: "Shop for a wide range of genuine medicines and healthcare products through our trusted online pharmacy.",
+    bgColor: "bg-blue-500",
+    hoverColor: "hover:bg-blue-600"
+  },
+  {
+    title: "Upload Prescription",
+    image: SERVICE_IMAGES.prescription,
+    description: "Simply upload your doctor's prescription using our secure platform. Our pharmacists will review and process your order quickly.",
+    bgColor: "bg-green-500",
+    hoverColor: "hover:bg-green-600"
+  },
+  {
+    title: "Vaccination",
+    image: SERVICE_IMAGES.vaccine,
+    description: "Book your vaccinations with ease through our online system. We offer a variety of vaccines administered by certified professionals at trusted locations.",
+    bgColor: "bg-purple-500",
+    hoverColor: "hover:bg-purple-600"
+  },
+  {
+    title: "Online Consultants",
+    image: SERVICE_IMAGES.onlineConsultants,
+    description: "Connect with licensed healthcare professionals through our online consultation service. Whether you need medication guidance or health advice, our experts are here to help",
+    bgColor: "bg-indigo-500",
+    hoverColor: "hover:bg-indigo-600"
+  }
 ];
